@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="mx-auto flex h-dvh max-w-xl flex-col items-center justify-center overflow-hidden px-4 text-center">
-    <img src="{{ asset('images/loading.webp') }}" alt="" width="992" height="586" class="max-h-[40dvh] w-full max-w-sm object-contain">
+    <img src="{{ asset('images/loading.png') }}" alt="" width="992" height="586" class="max-h-[40dvh] w-full max-w-sm object-contain">
 
     <h1 class="mt-6 text-2xl font-bold sm:text-3xl">Preparing your short links...</h1>
     <p class="mt-2 text-gray-600 dark:text-gray-400">

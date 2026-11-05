@@ -19,7 +19,7 @@
 
     <main class="flex min-h-0 flex-1 flex-col justify-center pb-4 lg:overflow-y-auto">
         <div class="reveal text-center" style="--i:0">
-            <img src="{{ asset('images/success.webp') }}" alt="" width="707" height="782"
+            <img src="{{ asset('images/success.png') }}" alt="" width="707" height="782"
                  class="mx-auto h-32 w-auto sm:h-36 lg:h-40">
             <h1 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Your short link is ready</h1>
             <p class="mt-1 text-gray-600 dark:text-gray-400">Copy it and share it anywhere.</p>
