@@ -11,7 +11,7 @@
             <span>ShortLink <span class="text-indigo-600 dark:text-indigo-400">Pro</span></span>
         </a>
         <div class="flex items-center gap-2">
-           {{-- <x-admin-pill /> --}} {{-- V2 mein admin banne par wapas chalu karenge --}}
+            <x-admin-pill />
             <x-theme-toggle />
         </div>
     </header>
@@ -46,8 +46,8 @@
                         }
                     }
                 }"
-                 x-init="run()"
-                 class="flex h-9 items-center justify-center gap-2 text-xl font-semibold text-gray-900 sm:text-2xl lg:justify-start dark:text-white">
+                x-init="run()"
+                class="flex h-9 items-center justify-center gap-2 text-xl font-semibold text-gray-900 sm:text-2xl lg:justify-start dark:text-white">
 
                 {{-- Icon: text hatne par chhup jata hai (jagah bani rehti hai, layout hilta nahi) --}}
                 <span class="inline-flex shrink-0 text-indigo-600 dark:text-indigo-400" :class="shown === '' && 'invisible'">
@@ -80,31 +80,31 @@
                 @csrf
                 {{-- Link jaise jaise lamba hota hai, box bhi bada hota jata hai (full link dikhta hai) --}}
                 <textarea name="url" rows="1" autocomplete="off" spellcheck="false" inputmode="url"
-                          placeholder="Paste your long link here..."
-                          x-data="{ grow(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight + 2, 160) + 'px'; } }"
-                          x-init="grow($el)"
-                          @input="grow($el)"
-                          @keydown.enter.prevent="$el.form.requestSubmit()"
-                          class="block min-h-12 w-full resize-none overflow-y-auto break-all rounded-xl border border-gray-300 bg-white px-4 py-3 text-left text-base leading-6 text-gray-900 placeholder-gray-400 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 sm:flex-1 dark:border-white/10 dark:bg-white/5 dark:text-gray-100 dark:placeholder-gray-500">{{ old('url') }}</textarea>
+                    placeholder="Paste your long link here..."
+                    x-data="{ grow(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight + 2, 160) + 'px'; } }"
+                    x-init="grow($el)"
+                    @input="grow($el)"
+                    @keydown.enter.prevent="$el.form.requestSubmit()"
+                    class="block min-h-12 w-full resize-none overflow-y-auto break-all rounded-xl border border-gray-300 bg-white px-4 py-3 text-left text-base leading-6 text-gray-900 placeholder-gray-400 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 sm:flex-1 dark:border-white/10 dark:bg-white/5 dark:text-gray-100 dark:placeholder-gray-500">{{ old('url') }}</textarea>
 
                 <button type="submit"
-                        class="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 text-base font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:bg-indigo-500 active:scale-95">
+                    class="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 text-base font-semibold text-white shadow-lg shadow-indigo-600/25 transition hover:bg-indigo-500 active:scale-95">
                     Shorten link
                     <x-heroicon-o-arrow-right class="h-5 w-5" />
                 </button>
             </form>
 
             @error('url')
-                <p class="mt-2 text-left text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
+            <p class="mt-2 text-left text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
             @enderror
         </div>
 
         {{-- Hero image: bachi hui jagah mein apne aap fit hoti hai, scroll nahi aata --}}
         <div class="relative min-h-0 w-full flex-1 lg:h-full lg:max-w-lg lg:self-stretch">
-            <img src="{{ asset('images/hero-link.webp') }}"
-                 alt="Illustration of a person shortening a link on a computer"
-                 width="648" height="642"
-                 class="absolute inset-0 h-full w-full object-contain">
+            <img src="{{ asset('images/hero-link.png') }}"
+                alt="Illustration of a person shortening a link on a computer"
+                width="648" height="642"
+                class="absolute inset-0 h-full w-full object-contain">
         </div>
     </main>
 

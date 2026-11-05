@@ -20,7 +20,7 @@
 
         {{-- Left: illustration, heading, original link --}}
         <section class="text-center lg:text-left">
-            <img src="{{ asset('images/success.webp') }}" alt="" width="707" height="782"
+            <img src="{{ asset('images/success.png') }}" alt="" width="707" height="782"
                  class="reveal mx-auto h-32 w-auto sm:h-40 lg:mx-0 lg:h-52 xl:h-60" style="--i:0">
 
             <h1 class="reveal mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl" style="--i:1">Your short links are ready</h1>

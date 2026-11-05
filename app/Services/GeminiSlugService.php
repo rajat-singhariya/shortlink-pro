@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\RateLimiter;
 
 class GeminiSlugService
 {
@@ -20,13 +21,18 @@ class GeminiSlugService
             return [];
         }
 
+        // Poori site ke liye din mein max 500 AI calls; limit ke baad normal naam aayenge
+        if (! RateLimiter::attempt('gemini-daily', 500, fn() => true, 86400)) {
+            return [];
+        }
+        
         $parts = parse_url($url);
         $host = $parts['host'] ?? '';
 
         // Privacy: query (?token=...) aur lambe/ajeeb path pieces Gemini ko nahi bhejte
         $segments = array_filter(
             explode('/', $parts['path'] ?? ''),
-            fn ($s) => $s !== '' && strlen($s) <= 40 && ! preg_match('/[0-9a-f]{16,}/i', $s)
+            fn($s) => $s !== '' && strlen($s) <= 40 && ! preg_match('/[0-9a-f]{16,}/i', $s)
         );
         $path = '/' . implode('/', array_slice(array_values($segments), 0, 4));
 

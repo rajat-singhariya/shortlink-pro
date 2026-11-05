@@ -14,7 +14,7 @@
     </header>
 
     <main class="flex min-h-0 flex-1 flex-col items-center justify-center py-4 text-center">
-        <img src="{{ asset('images/not-found-404.webp') }}" alt="" width="1000" height="348"
+        <img src="{{ asset('images/not-found-404.png') }}" alt="" width="1000" height="348"
              class="max-h-[40dvh] w-full max-w-lg object-contain">
 
         <h1 class="mt-6 text-3xl font-extrabold tracking-tight sm:text-4xl">This link doesn't exist</h1>
